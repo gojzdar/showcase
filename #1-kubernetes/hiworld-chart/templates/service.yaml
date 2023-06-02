@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hiworld-service
+spec:
+  type: NodePort
+  selector:
+    tag: hiworld-tag
+  ports:
+    - protocol: TCP
+      port: 8080 #port of the service, arbitrary
+      targetPort: 80 #port of the managed node
+      nodePort: 30080 #port exposed outside the cluster

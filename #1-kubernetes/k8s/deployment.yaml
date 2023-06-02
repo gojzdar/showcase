@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hi-lorem-dep
+spec:
+  selector:
+    matchLabels:
+      #run: apache-double-server
+      tag: hiworld-tag
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        #run: apache-double-server
+        #app: hiworld-app
+        tag: hiworld-tag
+
+    spec:
+      containers:
+      - name: hiworld-cont
+        image: gojzdar/hw1:latest
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 80 #on which port container listens, unnecessary
+            #protocol: TCP
+        #tags:
+        #  - ctt0
+      #- name: hiworld1
+      #  image: gojzdar/hiworld1
+      #  ports:
+      #    - containerPort: 8000
+      #      #protocol: TCP
+      #  #tags:
+      #  #  - ctt1

@@ -1,0 +1,28 @@
+1. Image
+
+1.1 Build Image
+- make bimg
+
+1.2 Run Image
+- make Run
+
+1.3 Publish image to docker hub
+- make Publish
+
+1.4 Build and run image
+- make [all]
+
+1.4.2 If you need to clean
+- make allc
+
+
+
+2. Deployment
+- kubectl apply -f deployment.yaml
+
+2.1 Open port
+2.1.1 Get podID
+- kubectl get pods
+
+2.1.2 Open port
+- kubectl port-forward hi-world-dep-56f986dcdf-qkt9v 8080:80
